@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>趣闻 App</title>
+
+<style>
+body {
+  background: #0d0d0d;
+  color: white;
+  font-family: Arial;
+}
+
+.card {
+  background: #1a1a1a;
+  margin: 20px;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.play-btn {
+  width: 60px;
+  height: 60px;
+  background: purple;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+button {
+  margin: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>趣闻</h2>
+
+<div class="card">
+  <div class="play-btn" onclick="playVideo()">▶</div>
+
+  <p>这是一个有趣的视频片段</p>
+
+  <button onclick="like()">❤️ 点赞</button>
+  <button onclick="comment()">💬 评论</button>
+</div>
+
+<video id="video" width="100%" controls style="display:none;">
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4">
+</video>
+
+<script>
+function playVideo() {
+  let v = document.getElementById("video");
+  v.style.display = "block";
+  v.play();
+}
+
+function like() {
+  alert("你点了赞 👍");
+}
+
+function comment() {
+  let text = prompt("请输入评论");
+  if (text) {
+    alert("评论成功：" + text);
+  }
+}
+</script>
+
+</body>
+</html>
